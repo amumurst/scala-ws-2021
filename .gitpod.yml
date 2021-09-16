@@ -3,3 +3,11 @@ vscode:
   extensions:
     - scalameta.metals
     - scala-lang.scala
+
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    master: true
+
+tasks:
+  - init: "sbt bloopInstall"
