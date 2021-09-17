@@ -31,7 +31,7 @@ object Task1 {
    D)
    Create a list with 5 or more elements that has a sum of 100
    */
-  val hundredlist: List[Int] = List(1, 2, 3, 4, 90)
+  lazy val hundredlist: List[Int] = List(1, 2, 3, 4, 90)
 
   /*
    E)
