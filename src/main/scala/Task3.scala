@@ -6,7 +6,8 @@ object Task3 {
    */
 
   def getVacationName(month: Int): Option[String] =
-    ???
+    if (month == 12) Some("Juleferie")
+    else None
 
   /*
     B)
@@ -15,8 +16,7 @@ object Task3 {
    */
 
   def increaseByOne(perhapsNumber: Option[Int]): Option[Int] =
-    ???
-
+    perhapsNumber.map(i => i + 1)
   /*
     C)
     Create a function that returns "Ingen" if there is no value inside the Option
@@ -24,7 +24,10 @@ object Task3 {
    */
 
   def getName(opt: Option[String]): String =
-    ???
+    opt match {
+      case Some(vacation) => vacation
+      case None           => "Ingen"
+    }
 
   //D;E;F => Expanding on above to include errors
   /*
@@ -33,7 +36,8 @@ object Task3 {
    */
 
   def getVacationName2(month: Int): Either[Int, String] =
-    ???
+    if (month == 12) Right("Juleferie")
+    else Left(month)
 
   /*
     E)
@@ -41,7 +45,7 @@ object Task3 {
    */
 
   def increaseByOne2(perhapsNumber: Either[String, Int]): Either[String, Int] =
-    ???
+    perhapsNumber.map(i => i + 1)
 
   /*
     F)
@@ -50,7 +54,10 @@ object Task3 {
    */
 
   def getName2(opt: Either[String, String]): String =
-    ???
+    opt match {
+      case Right(vacation) => vacation
+      case Left(error)     => error
+    }
 }
 
 object OptionalEither {

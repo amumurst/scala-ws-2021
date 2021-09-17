@@ -7,7 +7,11 @@ object Task4 {
   case class Person(name: String)
 
   def firstLongName(persons: List[Person], N: Int): Option[Person] =
-    ???
+    persons match {
+      case person :: rest if person.name.size > N => Some(person)
+      case _ :: rest                              => firstLongName(rest, N)
+      case Nil                                    => None
+    }
 
   /*
     B) (Hard)
@@ -18,7 +22,13 @@ object Task4 {
    */
 
   def averageListSafe(l: List[Int]): Int = {
-    ???
+    def loop(list: List[Int], sumSoFar: Int, counted: Int): Int =
+      list match {
+        case head :: rest => loop(rest, head + sumSoFar, counted + 1)
+        case Nil          => if (counted == 0) 0 else sumSoFar / counted
+      }
+
+    loop(l, 0, 0)
   }
 }
 

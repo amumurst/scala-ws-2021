@@ -4,7 +4,7 @@ object Task1 {
    A)
    Return the sum of the two numbers
    */
-  def addNumbers(i: Int, j: Int): Int = ???
+  def addNumbers(i: Int, j: Int): Int = i + j
 
   /*
    B)
@@ -13,7 +13,8 @@ object Task1 {
 
   var counter = 0 //Here we have a counter that holds some value
   def increaseCounterByN(n: Int): Int = {
-    ???
+    counter += n
+    counter
   }
 
   /*
@@ -24,26 +25,30 @@ object Task1 {
 
   var odds                   = 0
   var evens                  = 0
-  def registerNumber(n: Int) = ???
+  def registerNumber(n: Int) = if (n % 2 == 0) evens += 1 else odds += 1
 
   /*
    D)
    Create a list with 5 or more elements that has a sum of 100
    */
-  lazy val hundredlist: List[Int] = ???
+  lazy val hundredlist: List[Int] = List(1, 2, 3, 4, 90)
 
   /*
    E)
    Create a function that adds 1 to all numbers in a list
    */
-  def addOne(list: List[Int]): List[Int] = ???
+  def addOne(list: List[Int]): List[Int] = list.map(i => i + 1)
 
   /*
    F)
    Create a function that returns true if the name is longer than 9 letters or is exactly "FINN"
    */
   def checkName(name: String): Boolean =
-    ???
+    name match {
+      case "HARRY"         => true
+      case s if s.size > 9 => true
+      case _               => false
+    }
 }
 
 object Definitions {

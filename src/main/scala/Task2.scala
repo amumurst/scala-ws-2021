@@ -7,7 +7,12 @@ object Task2 {
     A)
     Create a function that takes a direction and returns its norwegian name (OPP, NED, HØYRE, VENSTRE)
    */
-  def directionInNorwegian(d: Direction): String = ???
+  def directionInNorwegian(d: Direction): String = d match {
+    case Direction.UP    => "OPP"
+    case Direction.DOWN  => "NED"
+    case Direction.LEFT  => "VENSTRE"
+    case Direction.RIGHT => "HØYRE"
+  }
 
   /*
     B)
@@ -17,13 +22,17 @@ object Task2 {
 
   case class Runner(name: String, distance: Int)
 
-  def totalRunDistance(runners: List[Runner]): Int = ???
+  def totalRunDistance(runners: List[Runner]): Int = runners.map(_.distance).sum
 
   /*
     C)
     Create a function that takes a runner and returns true only if the name is Sonic OR the distance is over 1000
    */
-  def runnerIsFast(runner: Runner): Boolean = ???
+  def runnerIsFast(runner: Runner): Boolean = runner match {
+    case Runner("Sonic", _)                 => true
+    case Runner(_, length) if length > 1000 => true
+    case _                                  => false
+  }
 }
 
 object ADT {
