@@ -41,3 +41,4 @@ Before they run the file will be compiled, so many errors will show up even befo
 When file compiles we can run the tests. Do so by opening the corresponding TaskXSpec file and press "test" <img width="412" alt="Screenshot 2021-09-17 at 05 20 01" src="https://user-images.githubusercontent.com/4258408/133718890-8304147e-73b2-46b1-831f-ad152a106ffc.png">
 
 
+If you are done super early, ask for other stuff (I have more), or try out some more tasks at https://www.scala-exercises.org/std_lib/lists
