@@ -65,7 +65,7 @@ object ADT {
     case Pet.Cat(name)                     => s"Emperor $name"
     case Pet.Fish(name, _)                 => s"Baron $name"
     case Pet.Squid(name, age) if age >= 10 => s"Duke $name"
-    case Pet.Squid(name, age) if age < 10  => s"Prince $name"
+    case Pet.Squid(name, age)              => s"Prince $name"
     case Pet.LochNessMonster               => s"Nessie the Loch Ness Monster"
   }
 
